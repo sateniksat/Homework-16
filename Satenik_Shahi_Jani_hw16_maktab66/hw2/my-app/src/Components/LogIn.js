@@ -27,7 +27,6 @@ function LogIn() {
         type="email"
         name="email"
         onChange={(e) => handleChangeInput(e)}
-        // ref={refemail}
         required
         placeholder="&#8226; پست الکترونیک"
       />
