@@ -72,7 +72,6 @@ function SignUp() {
             onChange={(e) => handledata(e)}
             type="text"
             name="fname"
-            // value={}
             placeholder="&#8226; نام"
             required
           />
@@ -121,7 +120,6 @@ function SignUp() {
           <label>استان</label>
           <select required onChange={handlestate} name="state">
             <option value="0" >
-              {" "}
               &#8226; استان محل تولد
             </option>
             {Object.keys(datafetch).map((item) => (
@@ -152,8 +150,6 @@ function SignUp() {
         onChange={(e) => handledata(e)}
         name="email"
         type="email"
-        // value={}
-        // ref={refemail}
         required
         placeholder="&#8226; پست الکترونیک"
       />

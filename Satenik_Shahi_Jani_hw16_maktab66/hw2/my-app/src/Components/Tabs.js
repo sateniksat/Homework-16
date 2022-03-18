@@ -5,11 +5,9 @@ import SignUp from "./SignUp";
 
 function Tabs() {
   const [toggleState, setToggleState] = useState(2);
-
-  const toggleTab = (index) => {
+ const toggleTab = (index) => {
     setToggleState(index);
   };
-
   return (
     <div className="container-0">
       <div className="container">
@@ -33,8 +31,7 @@ function Tabs() {
             className={
               toggleState === 1 ? "content  active-content" : "content"
             }
-          >
-            <SignUp/>
+          ><SignUp/>
           </div>
 
           <div

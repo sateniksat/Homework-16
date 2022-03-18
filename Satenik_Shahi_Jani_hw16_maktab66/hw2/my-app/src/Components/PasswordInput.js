@@ -19,12 +19,10 @@ function PasswordInput({ inputpass }) {
   return (
     <div className="login-pass">
       <input
-        //   onChange={input}
         onChange={(e) => handlevalidation(e)}
         className="login-pass"
         name="pass"
         type={visiblity ? "text" : "password"}
-        // value
         required
         placeholder="&#8226; کلمه عبور"
       />
