@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState,memo } from "react";
 import "../App.css";
+import LogIn from "./LogIn";
+import SignUp from "./SignUp";
 
 function Tabs() {
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(2);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -16,13 +18,13 @@ function Tabs() {
             className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
             onClick={() => toggleTab(1)}
           >
-            Tab 1
+            ثبت نام
           </button>
           <button
             className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
             onClick={() => toggleTab(2)}
           >
-            Tab 2
+            ورود
           </button>
         </div>
 
@@ -32,7 +34,7 @@ function Tabs() {
               toggleState === 1 ? "content  active-content" : "content"
             }
           >
-            <h2>Content 1</h2>
+            <SignUp/>
           </div>
 
           <div
@@ -40,7 +42,7 @@ function Tabs() {
               toggleState === 2 ? "content  active-content" : "content"
             }
           >
-            <h2>Content 2</h2>
+            <LogIn/>
           </div>
         </div>
       </div>
@@ -48,4 +50,4 @@ function Tabs() {
   );
 }
 
-export default Tabs;
+export default memo(Tabs);
