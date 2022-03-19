@@ -2,7 +2,8 @@ import React, { useState, memo } from "react";
 import PasswordInput from "./PasswordInput";
 
 function LogIn() {
-  const [data, setdata] = useState({});
+  const [data, setdata] = useState({ email: "", pass: "" });
+  const [showvalid, setshowvalid] = useState(false);
 
   const handlepass = (item) => {
     setdata({ ...data, ["pass"]: item });
@@ -17,8 +18,15 @@ function LogIn() {
   const handlesubmit = (e) => {
     e.preventDefault();
     console.log(data);
-    alert("Good Job!!!");
+    if (data.pass === "" || data.email === "") {
+      return setshowvalid(true);
+    } else {
+      setshowvalid(false);
+      alert("Good Job!!!");
+    }
   };
+
+
   return (
     <form className="login-container">
       <h2>خوش آمدید</h2>
@@ -30,8 +38,10 @@ function LogIn() {
         required
         placeholder="&#8226; پست الکترونیک"
       />
+      {showvalid && <span className="warning">لطفا فیلد را پر کنید.</span>}
       <label className="password-login">کلمه عبور</label>
       <PasswordInput inputpass={handlepass} />
+      {showvalid && <span className="warning">لطفا فیلد را پر کنید.</span>}
       <div className="forgot-pass">فراموش کردید؟</div>
       <button
         onClick={(event) => handlesubmit(event)}
